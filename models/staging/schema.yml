@@ -1,0 +1,35 @@
+version: 2
+
+sources:
+  - name: mavenmarket_raw
+    schema: mavenmarket_raw
+    tables:
+      - name: customers
+
+models:
+  - name: stg_customers
+    description: "Cleaned and standardized customer data from the raw source"
+    columns:
+      - name: customer_id
+        description: "Unique customer identifier"
+        tests:
+          - not_null
+          - unique
+      - name: customer_acct_num
+        description: "Internal account number"
+      - name: first_name
+        description: "Customer's first name"
+      - name: last_name
+        description: "Customer's last name"
+      - name: birthdate
+        description: "Customer's birth date"
+      - name: yearly_income
+        description: "Estimated yearly income"
+      - name: gender
+        description: "Customer gender"
+      - name: total_children
+        description: "Total number of children"
+      - name: num_children_at_home
+        description: "Number of children currently living at home"
+      - name: member_card
+        description: "Type of member card held"
