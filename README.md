@@ -8,7 +8,7 @@ A production-grade dbt project that transforms raw e-commerce data into validate
 
 This project models data from Maven Market — a fictional retail platform — using dbt Cloud and BigQuery. It follows modern data engineering best practices:
 
-- Modular SQL models (staging, marts)
+- Modular SQL models (`staging`, `marts`)
 - Semantic Git versioning and branching
 - Row-level validation using data quality flags
 - Centralized schema testing and documentation
@@ -29,7 +29,7 @@ models/
 ├── marts/                    # dim_* and fact_* models (TBD)
 └── dbt_project.yml
 
-🧾 Raw Data Sources (BigQuery Dataset: mavenmarket_raw)
+📦 Raw Data Sources (BigQuery Dataset: mavenmarket_raw)
 Table	Description
 customers	Customer demographic & account data
 products	Product attributes & pricing
@@ -37,43 +37,55 @@ returns	Product return records
 transactions_1997	Sales transactions (1997)
 transactions_1998	Sales transactions (1998)
 calendar	Full date dimension
-stores	Store details and regions
+stores	Store metadata
 regions	Geographic classifications
-
+```
 
 ✅ Key Features
 
     Staging Layer (stg_*)
 
-        Standardizes formats (dates, text, numeric)
+        Cleans and standardizes raw data
 
-        Handles parsing (e.g. "45K" → 45000)
+        Typecasts all numeric and boolean fields
 
-        Adds dq_flag column for row-level data quality status
+        Adds dq_flag for row-level validation
 
-        Applies BigQuery-friendly typecasting for downstream use
+        Includes gross margin, boolean fields, and parsed values
 
-    Schema Validation
+    Schema Testing
 
-        Uses dbt tests for not null and unique constraints
+        Uses not_null and unique dbt tests
 
-        All models documented via schema.yml
+        YAML-driven documentation with column descriptions
 
-    Git Workflow
+    Version Control
 
-        Feature branches for each model (e.g. feature/stg-products)
+        Feature branches per model (feature/stg-customers, etc.)
 
-        Semantic commit messages (feat:, chore:, etc.)
+        Semantic commits (feat:, chore:, etc.)
 
-        Pull Requests into main for review and version history
+        Pull request review and clean Git history
 
-🔧 Tech Stack
+🧰 Tech Stack
 Tool	Purpose
-dbt Cloud	Data transformation framework
-BigQuery	Cloud data warehouse
+dbt Cloud	Transformation framework
+BigQuery	Data warehouse
 Git + GitHub	Version control & collaboration
-Jinja	Templating in SQL
-🧠 Author
+Jinja	SQL templating
+🧪 Coming Soon
 
-Gaius Dan — Data Analyst | dbt Developer
+    dim_customers and dim_products for reporting
 
+    fact_sales combining transactions and returns
+
+    dbt Docs deployment
+
+    Source freshness & volume testing
+
+    Advanced model-level documentation
+
+👤 Author
+
+Gaius Dan
+Data Analyst | dbt Developer
