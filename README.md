@@ -39,6 +39,8 @@ transactions_1998	Sales transactions (1998)
 calendar	Full date dimension
 stores	Store details and regions
 regions	Geographic classifications
+
+
 ✅ Key Features
 
     Staging Layer (stg_*)
@@ -74,3 +76,4 @@ Jinja	Templating in SQL
 🧠 Author
 
 Gaius Dan — Data Analyst | dbt Developer
+
