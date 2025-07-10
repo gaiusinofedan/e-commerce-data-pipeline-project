@@ -33,3 +33,31 @@ models:
         description: "Number of children currently living at home"
       - name: member_card
         description: "Type of member card held"
+  - name: stg_products
+    description: "Cleaned and validated product data with margin logic and flags"
+    columns:
+      - name: product_id
+        description: "Unique product identifier"
+        tests:
+          - not_null
+          - unique
+      - name: brand
+        description: "Brand name of the product"
+      - name: name
+        description: "Product name"
+      - name: sku
+        description: "Stock keeping unit code"
+      - name: retail_price
+        description: "Retail price of the product"
+      - name: cost
+        description: "Cost of the product"
+      - name: gross_margin_pct
+        description: "Gross margin percentage calculated as (retail - cost) / retail"
+      - name: weight_kg
+        description: "Product weight in kilograms"
+      - name: is_recyclable
+        description: "Whether the product is marked as recyclable"
+      - name: is_low_fat
+        description: "Whether the product is marked as low fat"
+      - name: dq_flag
+        description: "Row-level data quality label, flags invalid margin or weight"
