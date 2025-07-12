@@ -151,3 +151,23 @@ models:
           - not_null
       - name: dq_flag
         description: "Data quality check for missing IDs or region names"
+  - name: stg_calendar
+    description: "Generated calendar dimension spanning transaction to return date range"
+    columns:
+      - name: date
+        description: "Date key"
+        tests:
+          - not_null
+          - unique
+      - name: year
+        description: "4-digit year"
+      - name: quarter
+        description: "Calendar quarter (1 to 4)"
+      - name: month_name
+        description: "Full name of the month"
+      - name: day_of_month
+        description: "Day of month (1 to 31)"
+      - name: day_of_week
+        description: "Full name of day (Monday, Tuesday...)"
+      - name: is_weekend
+        description: "TRUE if Saturday or Sunday"
