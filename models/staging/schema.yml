@@ -135,3 +135,19 @@ models:
         description: "Portion of total area allocated to grocery section"
       - name: dq_flag
         description: "Data quality check flag for remodel date logic"
+  - name: stg_regions
+    description: "Standardized regional lookup table for store-level sales geography"
+    columns:
+      - name: region_id
+        description: "Unique region identifier used as foreign key to store"
+        tests:
+          - not_null
+          - unique
+      - name: sales_district
+        description: "Specific sales district within the broader region"
+      - name: sales_region
+        description: "High-level regional classification for sales aggregation"
+        tests:
+          - not_null
+      - name: dq_flag
+        description: "Data quality check for missing IDs or region names"
