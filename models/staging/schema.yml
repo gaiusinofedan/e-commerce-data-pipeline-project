@@ -101,3 +101,37 @@ models:
         description: "Number of items purchased"
       - name: year
         description: "Transaction year (1997 or 1998)"
+  - name: stg_stores
+    description: "Cleaned and standardized store data including location, structure, and remodel tracking"
+    columns:
+      - name: store_id
+        description: "Unique identifier for each store"
+        tests:
+          - not_null
+          - unique
+      - name: region_id
+        description: "Foreign key to the store's sales region"
+      - name: store_type
+        description: "Type/category of the store"
+      - name: name
+        description: "Store name"
+      - name: street_address
+        description: "Cleaned street address (extra spaces removed)"
+      - name: city
+        description: "City where the store is located"
+      - name: state
+        description: "State or province of the store"
+      - name: country
+        description: "Country of the store"
+      - name: phone
+        description: "Store's contact phone number"
+      - name: opened_date
+        description: "Date when the store was first opened"
+      - name: last_remodel_date
+        description: "Date of the store's last remodel"
+      - name: total_sqft
+        description: "Total area of the store in square feet"
+      - name: grocery_sqft
+        description: "Portion of total area allocated to grocery section"
+      - name: dq_flag
+        description: "Data quality check flag for remodel date logic"
