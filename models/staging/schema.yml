@@ -61,3 +61,24 @@ models:
         description: "Whether the product is marked as low fat"
       - name: dq_flag
         description: "Row-level data quality label, flags invalid margin or weight"
+  - name: stg_returns
+    description: "Standardized returns data with parsed date, cleaned fields, and validation"
+    columns:
+      - name: return_date
+        description: "Date of the return (cast as DATE)"
+        tests:
+          - not_null
+      - name: product_id
+        description: "Returned product's unique identifier"
+        tests:
+          - not_null
+      - name: store_id
+        description: "Identifier of the store that processed the return"
+        tests:
+          - not_null
+      - name: return_quantity
+        description: "Number of units returned"
+        tests:
+          - not_null
+      - name: dq_flag
+        description: "Data quality flag; identifies future-dated returns"
