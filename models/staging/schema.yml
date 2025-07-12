@@ -82,3 +82,22 @@ models:
           - not_null
       - name: dq_flag
         description: "Data quality flag; identifies future-dated returns"
+  - name: stg_transactions
+    description: "Combined 1997 and 1998 transaction data with composite ID and quality filter"
+    columns:
+      - name: transaction_id
+        description: "Synthetic ID using transaction fields; duplicates may exist"
+        tests:
+          - not_null
+      - name: transaction_date
+        description: "Date of transaction"
+      - name: product_id
+        description: "Product involved in transaction"
+      - name: customer_id
+        description: "Customer who transacted"
+      - name: store_id
+        description: "Store where the purchase occurred"
+      - name: quantity
+        description: "Number of items purchased"
+      - name: year
+        description: "Transaction year (1997 or 1998)"
