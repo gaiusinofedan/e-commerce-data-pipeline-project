@@ -18,3 +18,24 @@ models:
         description: "Sum of gross profit"
       - name: return_rate
         description: "Ratio of returns to orders"
+  - name: mart_product_metrics
+    description: "Aggregated metrics at the product brand level"
+    columns:
+      - name: product_brand
+        description: "Brand of the product"
+        tests:
+          - not_null
+      - name: total_orders
+        description: "Total unique orders for the brand"
+      - name: quantity_sold
+        description: "Total quantity of items sold"
+      - name: total_revenue
+        description: "Total revenue generated from sales"
+      - name: total_cost
+        description: "Total cost of items sold"
+      - name: total_profit
+        description: "Total profit (revenue - cost)"
+      - name: quantity_returned
+        description: "Total quantity of items returned"
+      - name: return_rate
+        description: "Return rate as quantity_returned ÷ quantity_sold"
