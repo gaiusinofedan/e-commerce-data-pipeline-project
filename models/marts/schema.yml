@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: mart_exec_metrics
+    description: "Executive summary mart aggregating revenue, orders, returns, and profit by brand and month"
+    columns:
+      - name: month
+        description: "Truncated transaction date by month"
+      - name: product_category
+        description: "Proxy for product category using product brand"
+      - name: total_orders
+        description: "Total number of orders (sum of quantity)"
+      - name: total_returns
+        description: "Total returned quantity"
+      - name: total_revenue
+        description: "Sum of sales amount"
+      - name: total_profit
+        description: "Sum of gross profit"
+      - name: return_rate
+        description: "Ratio of returns to orders"
