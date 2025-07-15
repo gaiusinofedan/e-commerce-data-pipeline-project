@@ -39,3 +39,65 @@ models:
         description: "Total quantity of items returned"
       - name: return_rate
         description: "Return rate as quantity_returned ÷ quantity_sold"
+  - name: mart_customer_metrics
+    description: "Customer-level metrics combining demographics, transactions, and returns"
+    columns:
+      - name: customer_id
+        description: "Unique customer identifier"
+        tests:
+          - not_null
+          - unique
+      - name: customer_acct_num
+        description: "Internal account number"
+      - name: first_name
+        description: "Customer's first name"
+      - name: last_name
+        description: "Customer's last name"
+      - name: address
+        description: "Customer's residential address"
+      - name: city
+        description: "City of residence"
+      - name: state
+        description: "State or province"
+      - name: postal_code
+        description: "Postal or ZIP code"
+      - name: country
+        description: "Country of residence"
+      - name: birthdate
+        description: "Date of birth"
+      - name: marital_status
+        description: "Marital status"
+      - name: yearly_income
+        description: "Estimated annual income"
+      - name: gender
+        description: "Customer gender"
+      - name: total_children
+        description: "Number of children"
+      - name: num_children_at_home
+        description: "Number of children living at home"
+      - name: education_level
+        description: "Education level"
+      - name: acct_open_date
+        description: "Account opening date"
+      - name: member_card_type
+        description: "Type of member card held"
+      - name: occupation
+        description: "Occupation"
+      - name: is_homeowner
+        description: "Boolean flag for home ownership"
+      - name: total_orders
+        description: "Total number of unique order dates"
+      - name: total_quantity
+        description: "Total items purchased"
+      - name: total_revenue
+        description: "Total revenue from this customer"
+      - name: total_profit
+        description: "Total profit from this customer"
+      - name: first_order_date
+        description: "Date of first order"
+      - name: last_order_date
+        description: "Date of most recent order"
+      - name: total_returns
+        description: "Number of returned items"
+      - name: return_rate
+        description: "Percentage of returned items"
